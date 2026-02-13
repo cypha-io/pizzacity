@@ -96,6 +96,63 @@ export default function KitchenDashboardPage() {
   const [activeTab, setActiveTab] = useState<'orders' | 'history'>('orders');
   const [kitchenNotesOrder, setKitchenNotesOrder] = useState<KitchenOrder | null>(null);
   const [kitchenNotesText, setKitchenNotesText] = useState('');
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [updateCounter, setUpdateCounter] = useState(0);
+
+  // Real-time updates - triggers re-render every 5 seconds
+  useEffect(() => {
+    let callCount = 0;
+    
+    const interval = setInterval(() => {
+      callCount++;
+      setLastUpdated(new Date());
+      setUpdateCounter(prev => prev + 1);
+
+      // Auto-complete orders that have been ready for more than 5 minutes
+      setOrders(prevOrders => 
+        prevOrders.map(order => {
+          if (order.status === 'ready' && order.completedAt === undefined) {
+            const timeReady = Math.floor((Date.now() - order.placedAt.getTime()) / 60000);
+            // Auto-mark as completed after order has been ready for 5+ minutes (customer picked up)
+            if (timeReady > (order.estimatedPrepTime || 15) + 5) {
+              return { ...order, status: 'completed', completedAt: new Date() };
+            }
+          }
+          return order;
+        })
+      );
+
+      // Simulate occasional new orders (every 30 seconds, 50% chance)
+      if (Math.random() > 0.5 && callCount % 6 === 0) {
+        const newOrderNumber = `#${1000 + Math.floor(Math.random() * 5000)}`;
+        const types: Array<'delivery' | 'pickup' | 'dine-in'> = ['delivery', 'pickup', 'dine-in'];
+        const branches = ['North Legon', 'Accra', 'Agbogba'];
+        const items = [
+          { id: '1', name: 'Pepperoni Pizza', size: 'Large', crust: 'Thin', toppings: ['Pepperoni', 'Cheese'], quantity: 1 },
+          { id: '2', name: 'Margherita Pizza', size: 'Medium', crust: 'Thick', toppings: ['Mozzarella', 'Basil'], quantity: 1 },
+          { id: '3', name: 'BBQ Chicken', size: 'Large', toppings: ['BBQ', 'Cheese'], quantity: 2 },
+          { id: '4', name: 'Burger', size: 'Medium', toppings: ['Lettuce', 'Tomato'], quantity: 1 },
+        ];
+        
+        setOrders(prevOrders => [
+          ...prevOrders,
+          {
+            id: Date.now().toString(),
+            orderNumber: newOrderNumber,
+            status: 'new',
+            type: types[Math.floor(Math.random() * types.length)],
+            priority: Math.random() > 0.7,
+            branch: branches[Math.floor(Math.random() * branches.length)],
+            placedAt: new Date(),
+            estimatedPrepTime: 12 + Math.floor(Math.random() * 8),
+            items: [items[Math.floor(Math.random() * items.length)]],
+          }
+        ]);
+      }
+    }, 5000); // Update every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const getMinutesElapsed = (date: Date) => {
     return Math.floor((Date.now() - date.getTime()) / 60000);
@@ -195,7 +252,7 @@ export default function KitchenDashboardPage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-3 bg-white p-4 rounded-2xl shadow-md border-b border-gray-200">
+        <div className="flex gap-3 items-center bg-white p-4 rounded-2xl shadow-md border-b border-gray-200">
           <button
             onClick={() => setActiveTab('orders')}
             className={`px-4 py-2 rounded-xl font-semibold transition-colors ${
@@ -217,8 +274,21 @@ export default function KitchenDashboardPage() {
             <FiList size={18} />
             History
           </button>
-          <div className="ml-auto text-sm text-gray-600 font-medium flex items-center">
-            {activeTab === 'orders' ? `${totalOrders} active` : `${completedOrders.length} completed`}
+          
+          <div className="ml-auto flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+              </span>
+              <span className="text-green-700 font-medium">Live</span>
+            </div>
+            <span className="text-gray-600 font-medium">
+              {activeTab === 'orders' ? `${totalOrders} active` : `${completedOrders.length} completed`}
+            </span>
+            <span className="text-gray-500 text-xs">
+              Updated {updateCounter > 0 ? 'now' : 'just now'}
+            </span>
           </div>
         </div>
 
