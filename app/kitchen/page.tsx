@@ -99,7 +99,7 @@ export default function KitchenDashboardPage() {
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
   const [updateCounter, setUpdateCounter] = useState(0);
 
-  // Real-time updates - triggers re-render every 5 seconds
+  // Real-time updates - triggers re-render every 1 second
   useEffect(() => {
     let callCount = 0;
     
@@ -123,7 +123,7 @@ export default function KitchenDashboardPage() {
       );
 
       // Simulate occasional new orders (every 30 seconds, 50% chance)
-      if (Math.random() > 0.5 && callCount % 6 === 0) {
+      if (Math.random() > 0.5 && callCount % 30 === 0) {
         const newOrderNumber = `#${1000 + Math.floor(Math.random() * 5000)}`;
         const types: Array<'delivery' | 'pickup' | 'dine-in'> = ['delivery', 'pickup', 'dine-in'];
         const branches = ['North Legon', 'Accra', 'Agbogba'];
@@ -149,7 +149,7 @@ export default function KitchenDashboardPage() {
           }
         ]);
       }
-    }, 5000); // Update every 5 seconds
+    }, 1000); // Update every 1 second
 
     return () => clearInterval(interval);
   }, []);

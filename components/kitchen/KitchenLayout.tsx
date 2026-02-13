@@ -16,9 +16,9 @@ export default function KitchenLayout({ children }: KitchenLayoutProps) {
   const [currentTime, setCurrentTime] = useState<string>('');
 
   useEffect(() => {
-    setCurrentTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    setCurrentTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
     const interval = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+      setCurrentTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
