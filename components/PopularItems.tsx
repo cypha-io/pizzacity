@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { FiShoppingCart } from 'react-icons/fi';
+import ProductViewModal, { ProductViewItem } from '@/components/ProductViewModal';
 
 export default function PopularItems() {
+  const [selectedProduct, setSelectedProduct] = useState<ProductViewItem | null>(null);
   const products = [
     {
       id: 1,
@@ -51,10 +54,11 @@ export default function PopularItems() {
         {products.map((product) => (
           <div
             key={product.id}
-            className="cursor-pointer hover:scale-105 transition-transform"
+            className="cursor-pointer"
+            onClick={() => setSelectedProduct(product)}
           >
             {/* Image */}
-            <div className="relative h-40 bg-gray-100 rounded-xl overflow-hidden shadow-lg mb-3 group">
+            <div className="relative h-40 bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow mb-3 group">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -77,6 +81,11 @@ export default function PopularItems() {
           </div>
         ))}
       </div>
+
+      <ProductViewModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </section>
   );
 }

@@ -1,15 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { FiShoppingCart } from 'react-icons/fi';
 import Navbar from '@/components/Navbar';
 import Categories from '@/components/Categories';
 import Footer from '@/components/Footer';
+import ProductViewModal, { ProductViewItem } from '@/components/ProductViewModal';
 
 export default function CategoryPage() {
   const params = useParams();
   const category = params.category as string;
+  const [selectedProduct, setSelectedProduct] = useState<ProductViewItem | null>(null);
   
   // Capitalize category name
   const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
@@ -81,6 +84,13 @@ export default function CategoryPage() {
               <div
                 key={product.id}
                 className="cursor-pointer hover:scale-105 transition-transform"
+                onClick={() => setSelectedProduct({
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  image: product.image,
+                  category: categoryName,
+                })}
               >
                 {/* Image */}
                 <div className="relative h-40 bg-gray-100 rounded-xl overflow-hidden shadow-lg mb-3 group">
@@ -114,6 +124,11 @@ export default function CategoryPage() {
       </main>
 
       <Footer />
+
+      <ProductViewModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </div>
   );
 }
