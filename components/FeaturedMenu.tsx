@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
+import { useState } from 'react';
 import { FiShoppingCart, FiStar } from 'react-icons/fi';
+import ProductViewModal, { ProductViewItem } from '@/components/ProductViewModal';
 
 const featuredItems = [
   {
@@ -37,6 +38,8 @@ const featuredItems = [
 ];
 
 export default function FeaturedMenu() {
+  const [selectedProduct, setSelectedProduct] = useState<ProductViewItem | null>(null);
+
   return (
     <section className="py-16 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
@@ -52,6 +55,14 @@ export default function FeaturedMenu() {
             <div 
               key={item.id}
               className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all overflow-hidden border-4 border-transparent hover:border-red-500 group"
+              onClick={() => setSelectedProduct({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                image: item.image,
+                category: 'Featured',
+                description: item.description,
+              })}
             >
               {/* Badge */}
               <div className="relative">
@@ -79,19 +90,34 @@ export default function FeaturedMenu() {
                 
                 <div className="flex items-center justify-between pt-4">
                   <span className="text-3xl font-black text-red-600">{item.price}</span>
-                  <Link 
-                    href={`/product/${item.id}`}
+                  <button 
                     className="bg-red-600 text-white px-6 py-3 rounded-full font-bold hover:bg-red-700 transition-all flex items-center gap-2 shadow-lg group-hover:scale-105"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      setSelectedProduct({
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        image: item.image,
+                        category: 'Featured',
+                        description: item.description,
+                      });
+                    }}
                   >
                     <FiShoppingCart className="text-xl" />
                     Add
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <ProductViewModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </section>
   );
 }

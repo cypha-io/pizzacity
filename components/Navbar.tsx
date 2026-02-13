@@ -43,9 +43,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 pt-4 bg-white/20 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 pt-2 md:pt-4 bg-white/20 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo Section */}
             <div className="flex-shrink-0 pr-8">
               <Link href="/" className="flex items-center">
@@ -54,13 +54,13 @@ export default function Navbar() {
                   alt="Pizzacity Logo" 
                   width={60} 
                   height={60}
-                  className="rounded-lg"
+                  className="rounded-lg w-12 h-12 md:w-15 md:h-15"
                 />
               </Link>
             </div>
 
             {/* Middle Navigation Section - Desktop */}
-            <div className="hidden md:flex items-center space-x-6 px-4 mx-auto bg-white rounded-full shadow-xl py-2">
+            <div className="hidden md:flex items-center space-x-6 px-4 mx-auto bg-white/70 backdrop-blur-md rounded-full shadow-xl py-2">
             <Link 
               href="/" 
               className={`flex items-center gap-3 transition-colors px-6 py-3 rounded-full ${
@@ -148,14 +148,14 @@ export default function Navbar() {
           </div>
 
           {/* Mobile: Location and Account */}
-          <div className="md:hidden flex items-center gap-4 flex-1 justify-center relative">
+          <div className="md:hidden flex items-center gap-3 flex-1 justify-center relative">
             <button 
               onClick={() => setShowLocationMenu(!showLocationMenu)}
-              className="flex items-center gap-2 px-5 py-3 rounded-full bg-red-600 hover:bg-red-700 transition-colors shadow-md"
+              className="flex items-center gap-2 px-3 py-2 rounded-full bg-red-600 hover:bg-red-700 transition-colors shadow-md"
             >
-              <FiMapPin className="text-lg text-white" />
-              <span className="text-sm font-black text-white">{selectedLocation}</span>
-              <FiChevronDown className="text-base text-white" />
+              <FiMapPin className="text-base text-white" />
+              <span className="text-xs font-black text-white">{selectedLocation}</span>
+              <FiChevronDown className="text-sm text-white" />
             </button>
             
             {/* Dropdown Menu - Mobile */}
@@ -177,9 +177,9 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <Link 
               href="/account" 
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-red-600 hover:text-white transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-red-600 hover:text-white transition-colors"
             >
-              <FiUser className="text-2xl" />
+              <FiUser className="text-xl" />
             </Link>
           </div>
         </div>
@@ -188,39 +188,39 @@ export default function Navbar() {
 
       {/* Mobile Bottom Navigation */}
       <div className="md:hidden fixed bottom-4 left-0 right-0 z-50 px-4">
-        <div className="flex items-center justify-center space-x-6 px-4 mx-auto bg-white rounded-full py-2 max-w-fit shadow-xl">
+        <div className="flex items-center justify-center space-x-4 px-3 mx-auto bg-white rounded-full py-1.5 max-w-fit shadow-xl">
           <Link 
             href="/" 
-            className={`flex items-center gap-3 transition-colors px-5 py-3 rounded-full ${
+            className={`flex items-center gap-2 transition-colors px-3 py-2 rounded-full ${
               pathname === '/' 
                 ? 'bg-red-600 text-white' 
                 : 'text-gray-800 hover:text-red-600'
             }`}
           >
-            <IoHomeSharp className="text-2xl" />
-            {pathname === '/' && <span className="font-bold text-base">Home</span>}
+            <IoHomeSharp className="text-xl" />
+            {pathname === '/' && <span className="font-bold text-sm">Home</span>}
           </Link>
           <Link 
             href="/search" 
-            className={`flex items-center gap-3 transition-colors px-5 py-3 rounded-full ${
+            className={`flex items-center gap-2 transition-colors px-3 py-2 rounded-full ${
               pathname === '/search' 
                 ? 'bg-red-600 text-white' 
                 : 'text-gray-800 hover:text-red-600'
             }`}
           >
-            <FiSearch className="text-2xl" />
-            {pathname === '/search' && <span className="font-bold text-base">Search</span>}
+            <FiSearch className="text-xl" />
+            {pathname === '/search' && <span className="font-bold text-sm">Search</span>}
           </Link>
           <Link 
             href="/cart" 
-            className={`flex items-center gap-3 transition-colors px-5 py-3 rounded-full relative ${
+            className={`flex items-center gap-2 transition-colors px-3 py-2 rounded-full relative ${
               pathname === '/cart' 
                 ? 'bg-red-600 text-white' 
                 : 'text-gray-800 hover:text-red-600'
             }`}
           >
-            <FiShoppingCart className="text-2xl" />
-            {pathname === '/cart' && <span className="font-bold text-base">Cart</span>}
+            <FiShoppingCart className="text-xl" />
+            {pathname === '/cart' && <span className="font-bold text-sm">Cart</span>}
             <span className="absolute -top-1 left-3 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white">
               0
             </span>
