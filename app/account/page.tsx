@@ -9,8 +9,8 @@ export default function AccountPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-4xl font-black text-gray-800 mb-8 text-center">My Account</h1>
+      <main className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-2xl md:text-4xl font-black text-gray-800 mb-4 md:mb-8 text-center">My Account</h1>
 
         <div className="bg-white rounded-xl p-8 shadow-md mb-6">
           <div className="flex items-center gap-4 mb-8">

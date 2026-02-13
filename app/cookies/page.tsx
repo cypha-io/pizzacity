@@ -8,9 +8,9 @@ export default function CookiesPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-4 text-center">Cookie Policy</h1>
-        <p className="text-center text-gray-600 mb-12">Last updated: February 13, 2026</p>
+      <main className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-3xl md:text-5xl font-black text-gray-800 mb-3 md:mb-4 text-center">Cookie Policy</h1>
+        <p className="text-center text-gray-600 mb-6 md:mb-12">Last updated: February 13, 2026</p>
 
         <div className="bg-white rounded-xl p-8 shadow-md space-y-8">
           <section>

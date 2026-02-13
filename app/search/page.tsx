@@ -30,9 +30,9 @@ export default function SearchPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-7xl mx-auto px-6 py-12">
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-black text-gray-800 mb-6 text-center">Search Menu</h1>
+          <h1 className="text-2xl md:text-4xl font-black text-gray-800 mb-4 md:mb-6 text-center">Search Menu</h1>
           
           {/* Search Bar */}
           <div className="relative max-w-2xl mx-auto">
@@ -51,7 +51,7 @@ export default function SearchPage() {
         {searchQuery && (
           <div>
             <h2 className="text-2xl font-black text-gray-800 mb-6">
-              {filteredProducts.length} Results for "{searchQuery}"
+              {filteredProducts.length} Results for &quot;{searchQuery}&quot;
             </h2>
             
             {filteredProducts.length > 0 ? (
@@ -75,7 +75,7 @@ export default function SearchPage() {
               </div>
             ) : (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-500">No results found for "{searchQuery}"</p>
+                <p className="text-xl text-gray-500">No results found for &quot;{searchQuery}&quot;</p>
               </div>
             )}
           </div>

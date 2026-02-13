@@ -14,8 +14,8 @@ export default function HistoryPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <h1 className="text-4xl font-black text-gray-800 mb-8 text-center">Order History</h1>
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-2xl md:text-4xl font-black text-gray-800 mb-4 md:mb-8 text-center">Order History</h1>
 
         <div className="space-y-4">
           {orders.map((order) => (

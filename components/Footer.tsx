@@ -6,8 +6,8 @@ import { FiMail, FiPhone, FiMapPin, FiFacebook, FiInstagram, FiTwitter } from 'r
 
 export default function Footer() {
   return (
-    <footer className="bg-red-600 text-white mt-16">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="bg-red-600 text-white mt-8 md:mt-16 mb-20 md:mb-0">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo and About */}
           <div className="space-y-4">

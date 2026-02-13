@@ -8,12 +8,12 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-8 text-center">About Pizzacity</h1>
+      <main className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-3xl md:text-5xl font-black text-gray-800 mb-4 md:mb-8 text-center">About Pizzacity</h1>
 
         <div className="bg-white rounded-xl p-8 shadow-md space-y-6">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Welcome to Pizzacity, your go-to destination for fresh, delicious pizza and chicken delivered right to your door. Since our founding, we've been committed to using only the finest ingredients and time-tested recipes to create meals that bring joy to every table.
+            Welcome to Pizzacity, your go-to destination for fresh, delicious pizza and chicken delivered right to your door. Since our founding, we&apos;ve been committed to using only the finest ingredients and time-tested recipes to create meals that bring joy to every table.
           </p>
 
           <h2 className="text-3xl font-black text-gray-800 mt-8">Our Mission</h2>

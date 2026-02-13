@@ -42,9 +42,9 @@ export default function LocationsPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-8 text-center">Our Locations</h1>
-        <p className="text-xl text-gray-600 text-center mb-12">Visit us or order for delivery from your nearest branch</p>
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-3xl md:text-5xl font-black text-gray-800 mb-4 md:mb-8 text-center">Our Locations</h1>
+        <p className="text-base md:text-xl text-gray-600 text-center mb-6 md:mb-12">Visit us or order for delivery from your nearest branch</p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {locations.map((location) => (

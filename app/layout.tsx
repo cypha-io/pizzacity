@@ -13,12 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pizzacity.com'),
   title: "Pizzacity - Fresh Pizza & Chicken Delivery",
   description: "Order the best pizza, chicken, and more with fast delivery. Fresh ingredients, bold flavors!",
-  icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+  openGraph: {
+    title: "Pizzacity - Fresh Pizza & Chicken Delivery",
+    description: "Order the best pizza, chicken, and more with fast delivery. Fresh ingredients, bold flavors!",
+    url: "https://pizzacity.com",
+    siteName: "Pizzacity",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pizzacity - Fresh Pizza & Chicken Delivery",
+    description: "Order the best pizza, chicken, and more with fast delivery. Fresh ingredients, bold flavors!",
   },
 };
 

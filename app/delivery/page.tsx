@@ -9,8 +9,8 @@ export default function DeliveryPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-8 text-center">Delivery Information</h1>
+      <main className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-3xl md:text-5xl font-black text-gray-800 mb-4 md:mb-8 text-center">Delivery Information</h1>
 
         <div className="space-y-6">
           <div className="bg-white rounded-xl p-8 shadow-md">

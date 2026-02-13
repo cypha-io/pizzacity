@@ -8,15 +8,15 @@ export default function TermsPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-4 text-center">Terms & Conditions</h1>
-        <p className="text-center text-gray-600 mb-12">Last updated: February 13, 2026</p>
+      <main className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-3xl md:text-5xl font-black text-gray-800 mb-3 md:mb-4 text-center">Terms & Conditions</h1>
+        <p className="text-center text-gray-600 mb-6 md:mb-12">Last updated: February 13, 2026</p>
 
         <div className="bg-white rounded-xl p-8 shadow-md space-y-8">
           <section>
             <h2 className="text-2xl font-black text-gray-800 mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-700 leading-relaxed">
-              By accessing and using Pizzacity's services, you accept and agree to be bound by these Terms and Conditions. If you do not agree, please do not use our services.
+              By accessing and using Pizzacity&apos;s services, you accept and agree to be bound by these Terms and Conditions. If you do not agree, please do not use our services.
             </p>
           </section>
 
@@ -47,7 +47,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-black text-gray-800 mb-4">5. Product Quality</h2>
             <p className="text-gray-700 leading-relaxed">
-              We strive to maintain the highest quality standards. If you're not satisfied with your order, contact us immediately so we can make it right.
+              We strive to maintain the highest quality standards. If you&apos;re not satisfied with your order, contact us immediately so we can make it right.
             </p>
           </section>
 

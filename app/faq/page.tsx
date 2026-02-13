@@ -43,9 +43,9 @@ export default function FAQPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-4 text-center">Frequently Asked Questions</h1>
-        <p className="text-xl text-gray-600 text-center mb-12">Find answers to common questions</p>
+      <main className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-2xl md:text-5xl font-black text-gray-800 mb-3 md:mb-4 text-center">Frequently Asked Questions</h1>
+        <p className="text-base md:text-xl text-gray-600 text-center mb-6 md:mb-12">Find answers to common questions</p>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (

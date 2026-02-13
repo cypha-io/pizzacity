@@ -9,9 +9,9 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <main className="max-w-5xl mx-auto px-6 py-12">
-        <h1 className="text-5xl font-black text-gray-800 mb-8 text-center">Contact Us</h1>
-        <p className="text-xl text-gray-600 text-center mb-12">Have a question? We'd love to hear from you</p>
+      <main className="max-w-5xl mx-auto px-4 md:px-6 py-6 md:py-12 mb-20 md:mb-0">
+        <h1 className="text-3xl md:text-5xl font-black text-gray-800 mb-4 md:mb-8 text-center">Contact Us</h1>
+        <p className="text-base md:text-xl text-gray-600 text-center mb-6 md:mb-12">Have a question? We&apos;d love to hear from you</p>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-black text-lg text-gray-800 mb-1">Email</h3>
                   <p className="text-gray-600">info@pizzacity.com</p>
-                  <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
+                  <p className="text-sm text-gray-500 mt-1">We&apos;ll respond within 24 hours</p>
                 </div>
               </div>
             </div>

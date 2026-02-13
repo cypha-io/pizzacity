@@ -35,8 +35,8 @@ export default function AdSection() {
   }, [slides.length]);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-8">
-      <div className="relative overflow-hidden rounded-2xl shadow-xl h-[250px] md:h-[450px]">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-8">
+      <div className="relative overflow-hidden rounded-xl md:rounded-2xl shadow-xl h-[200px] md:h-[450px]">
         {slides.map((slide, index) => (
           <div
             key={index}
