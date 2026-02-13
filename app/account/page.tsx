@@ -12,7 +12,7 @@ export default function AccountPage() {
       <main className="max-w-4xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-black text-gray-800 mb-8 text-center">My Account</h1>
 
-        <div className="bg-white rounded-xl p-8 shadow-md mb-6">
+        <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200 mb-6">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center">
               <FiUser className="text-4xl text-white" />

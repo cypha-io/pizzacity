@@ -51,10 +51,10 @@ export default function PopularItems() {
         {products.map((product) => (
           <div
             key={product.id}
-            className="cursor-pointer hover:scale-105 transition-transform"
+            className="cursor-pointer"
           >
             {/* Image */}
-            <div className="relative h-40 bg-gray-100 rounded-xl overflow-hidden shadow-lg mb-3 group">
+            <div className="relative h-40 bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow mb-3 group">
               <Image
                 src={product.image}
                 alt={product.name}

@@ -13,7 +13,7 @@ export default function DeliveryPage() {
         <h1 className="text-5xl font-black text-gray-800 mb-8 text-center">Delivery Information</h1>
 
         <div className="space-y-6">
-          <div className="bg-white rounded-xl p-8 shadow-md">
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <FiMapPin className="text-xl text-white" />
@@ -32,7 +32,7 @@ export default function DeliveryPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-md">
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <FiClock className="text-xl text-white" />
@@ -49,7 +49,7 @@ export default function DeliveryPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-md">
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <FiDollarSign className="text-xl text-white" />
@@ -65,7 +65,7 @@ export default function DeliveryPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-md">
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <FiTruck className="text-xl text-white" />

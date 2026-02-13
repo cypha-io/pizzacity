@@ -57,7 +57,7 @@ export default function SearchPage() {
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {filteredProducts.map((product) => (
-                  <div key={product.id} className="cursor-pointer hover:scale-105 transition-transform">
+                  <div key={product.id} className="cursor-pointer">
                     <div className="relative h-40 bg-gray-100 rounded-xl overflow-hidden shadow-lg mb-3 group">
                       <Image src={product.image} alt={product.name} fill className="object-cover" />
                       <button className="absolute top-2 right-2 w-10 h-10 bg-yellow-400 hover:bg-yellow-500 rounded-full flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-opacity shadow-lg">

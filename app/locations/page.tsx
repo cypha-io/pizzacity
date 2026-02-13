@@ -48,7 +48,7 @@ export default function LocationsPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {locations.map((location) => (
-            <div key={location.name} className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+            <div key={location.name} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-200">
               <h2 className="text-2xl font-black text-gray-800 mb-4">{location.name}</h2>
               
               <div className="space-y-3">

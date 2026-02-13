@@ -52,10 +52,10 @@ export default function Categories({ activeCategory }: CategoriesProps) {
                 href={category.href}
                 className="group flex-shrink-0"
               >
-                <div className={`rounded-xl p-3 hover:scale-105 transition-transform shadow-md hover:shadow-lg flex items-center gap-2 min-w-[140px] ${
+                <div className={`rounded-lg p-3 shadow-sm hover:shadow-md transition-shadow flex items-center gap-2 min-w-[140px] ${
                   isActive 
-                    ? 'bg-gradient-to-br from-yellow-400 to-yellow-500' 
-                    : 'bg-gradient-to-br from-red-500 to-red-600'
+                    ? 'bg-yellow-400 text-gray-900' 
+                    : 'bg-red-600 text-white'
                 }`}>
                   <div className="text-2xl flex-shrink-0">
                     {category.image}

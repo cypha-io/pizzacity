@@ -19,7 +19,7 @@ export default function HistoryPage() {
 
         <div className="space-y-4">
           {orders.map((order) => (
-            <div key={order.id} className="bg-white rounded-xl p-6 shadow-md">
+            <div key={order.id} className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <h3 className="font-black text-xl text-gray-800 mb-2">Order {order.id}</h3>

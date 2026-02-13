@@ -15,7 +15,7 @@ export default function ContactPage() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="bg-white rounded-xl p-8 shadow-md">
+          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
             <h2 className="text-2xl font-black text-gray-800 mb-6">Send us a message</h2>
             
             <form className="space-y-4">
@@ -42,7 +42,7 @@ export default function ContactPage() {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <FiPhone className="text-xl text-white" />
@@ -55,7 +55,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <FiMail className="text-xl text-white" />
@@ -68,7 +68,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <FiMapPin className="text-xl text-white" />
