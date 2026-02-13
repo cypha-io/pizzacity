@@ -34,8 +34,8 @@ export default function FAQPage() {
       answer: 'Yes, we have vegetarian pizzas and sides. Check our menu for meat-free options.'
     },
     {
-      question: 'What if I'm not satisfied with my order?',
-      answer: 'Customer satisfaction is our priority. Contact us immediately if there's an issue and we'll make it right.'
+      question: 'What if I\'m not satisfied with my order?',
+      answer: 'Customer satisfaction is our priority. Contact us immediately if there\'s an issue and we\'ll make it right.'
     },
   ];
 
